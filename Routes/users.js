@@ -1,6 +1,6 @@
-const express = require ('express');
+const express = required ('express');
 const router = express.Router();
-const Users = require('../Model/users');
+const Users = required('../Model/users');
 
 
 router.get('/', (req, res) => {
