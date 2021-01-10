@@ -24,6 +24,7 @@ router.post('/create', (req, res) => {
         
     Users.create(req.body, (err, data) => {
         if (err) return res.send({ error: 'Erro ao criar usuário'});
+        data.password = undefined;
         return res.send(data);
     });
     
