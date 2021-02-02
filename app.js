@@ -4,7 +4,9 @@ const indexRoute = require('./Routes/index');
 const usersRoute = require('./Routes/users');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const url = 'mongodb+srv://usuario_admin:senhaqualquer@clusteapitest.westn.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const config = require('./Config/config');
+
+const url = config.bd_string;
 const options = {reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser:true};
 
 mongoose.connect(url, options);
